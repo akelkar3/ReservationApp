@@ -1,0 +1,2 @@
+# ReservationApp
+Restaurant seating reservation app. This app is used by restaurants to register customers who are looking for seating though a mobile app. The customers should be alerted through a sms when a table is available for them, in addition the customers should be able to check on their status and estimated waiting time also through SMS. The app should also provide an admin portal to monitor the status of the reservations.
