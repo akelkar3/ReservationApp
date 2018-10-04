@@ -1,19 +1,34 @@
-# ReservationApp
-Restaurant seating reservation app. This app is used by restaurants to register customers who are looking for seating though a mobile app. The customers should be alerted through a sms when a table is available for them, in addition the customers should be able to check on their status and estimated waiting time also through SMS. The app should also provide an admin portal to monitor the status of the reservations.
-
-
-#Description of the app and functionalities.
-
-#Details of the features and descriptions of both the mobile app and web app.
-
+#SMSGatewayApp
+Abstract:
+SMS Gateway app. This app focuses on developing a mobile SMS gateway using an Android app which is deployed to enable the sending and receiving of SMS. The mobile app is to be deployed on an Android phone and it should notify a server when a SMS is received and indicate the sender, receiver, and message content. The server app should enable the addition of new devices (phones), show a log of the received messages, and allow the registration of callback urls that are called when messages are received from a specific android gateway app. This app is similar to Twilio but using android app and a server instead of Twilio. In addition, the server should be able to communicate with the android app and request it sends a messages to a specific receiver. 
+#Description of the app and functionalities:
+To create a sms gateway using two components a gateway server and a gateway app. For the developer who wants utilize this gateway.
+Gateway will generate an API key for all the users to authorize the users and provide them a way to communicate with their registered phone numbers through a gateway server. Where the mapping of the developer, its devices and the webhooks to talk with are stored.
+Once the developer initiates a communication with gateway server using the message sending api the message is relayed to particular device of the developer. This device has our gateway app which gets a push notification from gateway server and then in turn sends the sms to the respective phone number requested by the developer in the sending api.
+Whereas when one of these phone numbers receive the sms they talk through the gateway app to our gateway server which figures out which developer is registered with this device/phone number and uses its respective webhook to call the call back api. And the message is relayed to the developer.
+#Details of the features and descriptions of both the mobile app and web app:
 ##Mobile App
-
+Will have capability to login the user
+Will read and send sms using the carrier.
 ##Web App
-
-#Details on the technology to be used.
-
-#Details of the DB schemas to be adopted.
-
+Gateway webapp:-
+There will be two views one for admin and one for developer.
+Admin view will show list of developers and on clicking a particular developer, the same view will be shown to the Admin that is supposed to be shown to a developer that is developer details.
+Developer detail will contain all the devices associated to the developer account where  on clicking each device you can see the complete log of the message received and sent through that devices.
+The developer can signup and login into the portal.
+The developer devices are added to the developer details as soon as they signup on the app in their devices.
+ 
+#Details on the technology to be used:
+UI/Frontend: Mobile App (Android) 
+Middle tier: Node and Express(Routing)
+Backend Database: supported using MongoDB/MySQL 
+Data transition format: JSON
+#Details of the DB schemas to be adopted:
+DB schema:
+Device Registry schema: Data attributes include UID, Phone_ID
+User Details Schema: Data attributes include email, UID, APIKey, callback_webhook, hash
+Messages log schema: ID, from, to, date, message, status
+ 
 #A table that lists the different tasks and the name of the team member who is going to work on this task.
 
 | Task | Team member |
