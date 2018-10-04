@@ -44,5 +44,18 @@ Messages log schema: ID, from, to, date, message, status
 
 | Task | Team member |
 | --- | --- |
-| git status | List all new or modified files |
-| git diff | Show file differences that haven't been staged |
+| gateway server app - login and signup | snigdha |
+| gateway server app - showdevelopers | snigdha |
+| gateway server app - showdeveloperdetail | snigdha |
+| gateway server app - showlogs | snigdha |
+| gateway server api- gatewayapi\send (from developer to gateway server) | ankit |
+| gateway server api- gatewayapi\SendMessage (from server to mobile) | ankit |
+| gateway server api- gatewayapi\recievedMessage (from mobile to server) | prerana |
+| gateway server api- gatewayapi\toCallBackURL (from server to developer) | prerana |
+| gateway server api- gatewaypi\createUUID | prerna |
+| mobile app- login | prerana |
+| mobile app- get push notification from server | ankit | 
+| mobile app- send and read sms | ankit |
+| mobole app- get phone numbner | ankit |
+
+
